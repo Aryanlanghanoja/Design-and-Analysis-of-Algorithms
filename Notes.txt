@@ -1,0 +1,6 @@
+Insertion
+Bubble
+Selection
+Counting
+Merge
+Quick
