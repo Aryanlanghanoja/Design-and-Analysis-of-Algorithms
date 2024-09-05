@@ -1,6 +1,12 @@
-Insertion
-Bubble
-Selection
-Counting
-Merge
-Quick
+Insertion Sort
+Bubble Sort
+Selection Sort
+Counting Sort
+Merge Sort
+Quick Sort
+Linear Search
+Binary Search
+Exponential Naive
+Exponential DC O(n2)
+Exponential DC O(nlogn)
+Karatsuba Multiplication
