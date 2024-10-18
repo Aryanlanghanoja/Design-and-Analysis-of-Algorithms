@@ -1,6 +1,4 @@
-#include<iostream>
-#include<algorithm>
-#include<vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 int Knapsack_0_1(vector<int>& Profit, vector<int>& Weigth, int total_weight) {
@@ -22,7 +20,7 @@ int Knapsack_0_1(vector<int>& Profit, vector<int>& Weigth, int total_weight) {
             total_weight -= Profit_weight[i].second;
         }
         else {
-            break; 
+            break;
         }
     }
 
@@ -30,8 +28,8 @@ int Knapsack_0_1(vector<int>& Profit, vector<int>& Weigth, int total_weight) {
 }
 
 int main() {
-    vector<int> Profit = { 60,100,120 };
-    vector<int> Weight = { 10,20,20 };
+    vector<int> Profit = { 60,100,120,90 };
+    vector<int> Weight = { 10,20,20,15 };
     int total_weight = 40;
 
     int total_profit = Knapsack_0_1(Profit, Weight, total_weight);

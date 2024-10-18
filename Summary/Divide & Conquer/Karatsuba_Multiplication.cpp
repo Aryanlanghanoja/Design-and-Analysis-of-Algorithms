@@ -1,6 +1,4 @@
-#include <iostream>
-#include <cmath>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
 
 int Get_Size(long long num) {
