@@ -1,0 +1,24 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": true,
+      "cwd": "d:/Aryan Data/Usefull Data/Semester - 5/Design-and-Analysis-of-Algorithms/Lab Code/27-11-2024 Rabin_Karp",
+      "program": "d:/Aryan Data/Usefull Data/Semester - 5/Design-and-Analysis-of-Algorithms/Lab Code/27-11-2024 Rabin_Karp/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,6 +1,4 @@
-#include <iostream>
-#include <cmath>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
 
 int Get_Size(long long num) {
@@ -34,10 +32,18 @@ long long int Karatsuba(long long num1, long long num2) {
 }
 
 int main() {
-    long long x = 12345;
-    long long y = 67890;
-    long long int ans = Karatsuba(x, y);
-    cout << ans << endl;
 
+    long long x;
+    cout << "Enter the First Number :- ";
+    cin >> x;
+
+    long long y;
+    cout << "Enter the Second Number :- ";
+    cin >> y;
+
+    long long int ans = Karatsuba(x, y);
+    cout << "The Product of " << x << " and " << y << " is: " << ans;
+    
     return 0;
+    
 }

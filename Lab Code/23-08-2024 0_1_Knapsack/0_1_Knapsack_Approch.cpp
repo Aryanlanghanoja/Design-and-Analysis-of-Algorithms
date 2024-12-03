@@ -1,6 +1,4 @@
-#include<iostream>
-#include<algorithm>
-#include<vector>
+#include<bits/stdc++.h>
 using namespace std;
 
 int Knapsack_0_1(vector<int>& Profit, vector<int>& Weigth, int total_weight) {
