@@ -1,10 +1,13 @@
-#include<iostream>
-#include<vector>
+#include <iostream>
+#include <vector>
 using namespace std;
 
-int Linear_Search(vector<int> Array, int key) {
-    for (int i = 0; i < Array.size(); i++) {
-        if (Array[i] == key) {
+int Linear_Search(vector<int> Array, int key)
+{
+    for (int i = 0; i < Array.size(); i++)
+    {
+        if (Array[i] == key)
+        {
             return i;
         }
     }
@@ -12,30 +15,36 @@ int Linear_Search(vector<int> Array, int key) {
     return -1;
 }
 
-void Print_Array(vector<int> Array) {
-    for (int i = 0; i < Array.size(); i++) {
+void Print_Array(vector<int> Array)
+{
+    for (int i = 0; i < Array.size(); i++)
+    {
         cout << Array[i] << " ";
     }
     cout << endl;
 }
 
-
-void Input_Array(vector<int>& Array) {
-    for (int i = 0; i < Array.size(); i++) {
+void Input_Array(vector<int> &Array)
+{
+    for (int i = 0; i < Array.size(); i++)
+    {
         cout << "Enter Element at index " << i << " : ";
         cin >> Array[i];
     }
 }
 
-int main() {
+int main()
+{
     int size;
     int key;
 
-    while (true) {
+    while (true)
+    {
         cout << "Enter The Size of the Array :- " << endl;
         cin >> size;
 
-        if (size >= 1) {
+        if (size >= 1)
+        {
             break;
         }
 
@@ -52,11 +61,13 @@ int main() {
     cin >> key;
 
     int ans = Linear_Search(Array, key);
-    if (ans != -1) {
+    if (ans != -1)
+    {
         cout << key << " Found at Index - " << ans << " of Array." << endl;
     }
 
-    else {
+    else
+    {
         cout << "Key is not exists in Array.";
     }
     return 0;

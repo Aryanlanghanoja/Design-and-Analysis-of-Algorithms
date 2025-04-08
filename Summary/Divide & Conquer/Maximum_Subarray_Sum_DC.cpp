@@ -1,71 +1,63 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <climits>
 using namespace std;
 
-class Solution {
-public:
+// Function to find the maximum sum of subarray crossing the middle
+int maxCrossingSum(int arr[], int low, int mid, int high)
+{
+    int left_sum = INT_MIN;
+    int sum = 0;
 
-    int partition_algo(vector<int>& nums, int L, int R) {
-
-        int P = nums[L];
-        int i = L + 1;
-        int j = R;
-
-        while (i <= j) {
-
-            if (nums[i] < P && nums[j] > P) {
-                swap(nums[i], nums[j]);
-                i++;
-                j--;
-            }
-
-            if (nums[i] >= P) {
-                i++;
-            }
-
-            if (nums[j] <= P) {
-                j--;
-            }
-        }
-
-        swap(nums[L], nums[j]);
-        return j;
+    // Traverse left half from mid to low
+    for (int i = mid; i >= low; i--)
+    {
+        sum += arr[i];
+        if (sum > left_sum)
+            left_sum = sum;
     }
 
-    int findKthLargest(vector<int>& nums, int k) {
-        int n = nums.size();
+    int right_sum = INT_MIN;
+    sum = 0;
 
-        int L = 0;
-        int R = n - 1;
-
-        int pivot_idx = 0;
-
-        while (true) {
-
-            pivot_idx = partition_algo(nums, L, R);
-
-            if (pivot_idx == k - 1) {
-                break;
-            }
-            else if (pivot_idx > k - 1) {
-                R = pivot_idx - 1;
-            }
-            else {
-                L = pivot_idx + 1;
-            }
-
-        }
-
-
-        return nums[pivot_idx];
-
+    // Traverse right half from mid+1 to high
+    for (int i = mid + 1; i <= high; i++)
+    {
+        sum += arr[i];
+        if (sum > right_sum)
+            right_sum = sum;
     }
-};
 
-int main() { 
-    Solution solution;
-    vector<int> nums = { 3, 2, 1, 5, 6, 4 };
-    int k = 2;
-    cout << "Kth largest element is: " << solution.findKthLargest(nums, k) << endl;
-    return 0;
+    // Return the sum of elements crossing the middle
+    return left_sum + right_sum;
 }
 
+// Function to find the maximum subarray sum using divide and conquer
+int maxSubArraySum(int arr[], int low, int high)
+{
+    // Base case: only one element
+    if (low == high)
+        return arr[low];
+
+    // Find middle point
+    int mid = (low + high) / 2;
+
+    // Recursively find maximum sum in left, right, and crossing subarrays
+    int left_sum = maxSubArraySum(arr, low, mid);
+    int right_sum = maxSubArraySum(arr, mid + 1, high);
+    int cross_sum = maxCrossingSum(arr, low, mid, high);
+
+    // Return the maximum of the three
+    return max(max(left_sum, right_sum), cross_sum);
+}
+
+int main()
+{
+    int arr[] = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    int max_sum = maxSubArraySum(arr, 0, n - 1);
+
+    cout << "Maximum subarray sum is: " << max_sum << endl;
+
+    return 0;
+}

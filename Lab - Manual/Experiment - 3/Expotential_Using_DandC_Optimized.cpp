@@ -1,35 +1,38 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-long long Expotential(long base, long power) {
-    if (power == 0) {
+long long Expotential(long base, long power)
+{
+    if (power == 0)
+    {
         return 1;
     }
 
-    if (base == 0) {
+    if (base == 0)
+    {
         return 0;
     }
-    
-    if (power < 0) {
-        return  1 / Expotential(base, power * -1);
-    }
 
-    if (power == 1) {
+    if (power == 1)
+    {
         return base;
     }
 
     long long Half_Power = Expotential(base, power / 2);
 
-    if (power % 2 == 0) {
-        return Half_Power * Half_Power ;
+    if (power % 2 == 0)
+    {
+        return Half_Power * Half_Power;
     }
 
-    else {
-        return base * Half_Power * Half_Power ;
+    else
+    {
+        return base * Half_Power * Half_Power;
     }
 }
 
-int main() {
+int main()
+{
 
     long base;
     long power;

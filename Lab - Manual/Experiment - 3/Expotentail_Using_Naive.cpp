@@ -1,19 +1,30 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-long long Expotential(long base, long power) {
-    if (power == 0) {
+long long Expotential(long base, long power)
+{
+    if (power == 0)
+    {
         return 1;
     }
 
-    if (power == 1) {
+    if (power == 1)
+    {
         return base;
     }
 
-    return base * Expotential(base, power - 1);
+    long long answer = 1;
+
+    for (int i = 0; i < power; i++)
+    {
+        answer *= base;
+    }
+
+    return answer;
 }
 
-int main() {
+int main()
+{
 
     long base;
     long power;

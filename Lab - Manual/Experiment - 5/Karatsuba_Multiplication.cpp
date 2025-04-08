@@ -1,13 +1,16 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int Get_Size(long long num) {
+int Get_Size(long long num)
+{
     return num == 0 ? 1 : static_cast<int>(log10(num)) + 1;
 }
 
-long long int Karatsuba(long long num1, long long num2) {
+long long int Karatsuba(long long num1, long long num2)
+{
 
-    if (num1 < 10 || num2 < 10) {
+    if (num1 < 10 || num2 < 10)
+    {
         return num1 * num2;
     }
 
@@ -16,7 +19,6 @@ long long int Karatsuba(long long num1, long long num2) {
 
     long long powerOf10 = static_cast<long long>(pow(10, half));
     long long powerOf102x = powerOf10 * powerOf10;
-
 
     long long a = num1 / powerOf10;
     long long b = num1 % powerOf10;
@@ -31,7 +33,8 @@ long long int Karatsuba(long long num1, long long num2) {
     return ans;
 }
 
-int main() {
+int main()
+{
 
     long long x;
     cout << "Enter the First Number :- ";
@@ -43,7 +46,6 @@ int main() {
 
     long long int ans = Karatsuba(x, y);
     cout << "The Product of " << x << " and " << y << " is: " << ans;
-    
+
     return 0;
-    
 }
